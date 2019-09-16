@@ -79,10 +79,10 @@ RUN pip install git+https://github.com/jupyterhub/jupyter-rsession-proxy
 
 # R
 # https://askubuntu.com/questions/610449/w-gpg-error-the-following-signatures-couldnt-be-verified-because-the-public-k
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
-# https://cran.r-project.org/bin/linux/ubuntu/README.html
-RUN echo "deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/" | sudo tee -a /etc/apt/sources.list
-# https://launchpad.net/~marutter/+archive/ubuntu/c2d4u3.5
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
+
+RUN add-apt-repository 'deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran35/'
+
 RUN add-apt-repository ppa:marutter/c2d4u3.5
 # Install CRAN binaries from ubuntu
 RUN apt-get update && apt-get install -yq --no-install-recommends \
