@@ -196,7 +196,7 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
 RUN Rscript -e 'install.packages(c("circlize"))'
 
 # Install Bioconductor packages
-RUN Rscript -e 'BiocManager::install(c("ELMER", "MultiAssayExperiment", "TxDb.Hsapiens.UCSC.hg38.knownGene","karyoploteR", "ComplexHeatmap", "TCGAbiolinks"  "SummarizedExperiment", "GenomicRanges"))'
+RUN Rscript -e 'BiocManager::install(c("ELMER", "MultiAssayExperiment", "TxDb.Hsapiens.UCSC.hg38.knownGene","karyoploteR", "ComplexHeatmap", "TCGAbiolinks", "SummarizedExperiment", "GenomicRanges"))'
 
 # MAKE DEFAULT USER SUDO
 
