@@ -98,13 +98,10 @@ RUN Rscript -e 'install.packages("hdf5r",configure.args="--with-hdf5=/usr/bin/h5
 # PYTHON PACKAGES
 
 # Install scanpy and other python packages
-RUN pip install scanpy python-igraph louvain bbknn rpy2 tzlocal scvelo leidenalg
+RUN pip install python-igraph louvain bbknn rpy2 tzlocal leidenalg
 # Try to fix rpy2 problems
 # https://stackoverflow.com/questions/54904223/importing-rds-files-in-python-to-be-read-as-a-dataframe
 RUN pip install --upgrade rpy2 pandas
-# scanorama
-RUN git clone https://github.com/brianhie/scanorama.git
-RUN cd scanorama/ && python setup.py install
 # necessary for creating user environments 
 RUN conda install --quiet --yes nb_conda_kernels
 
